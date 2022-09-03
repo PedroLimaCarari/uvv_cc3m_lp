@@ -49,7 +49,9 @@ class Image:
 
     def blurred(self, n):
         kernel = k_desfoque(n)
-        return self.correlacao(kernel)
+        desfoque = self.correlacao(kernel)
+        desfoque.acertar()
+        return desfoque
 
     def sharpened(self, n):
         img_borrada = self.blurred(n)
@@ -67,6 +69,7 @@ class Image:
         for x in range(self.width):
             for y in range(self.height):
                 img_borda.set_pixel(x, y, round(math.sqrt(img1.get_pixel(x, y) ** 2 + img2.get_pixel(x, y) ** 2)))
+        img_borda.acertar()
         return img_borda
 
     def correlacao(self, kernel):
@@ -80,7 +83,6 @@ class Image:
                     for b in range(z):
                         color_new += self.get_pixel((x - meio + b), (y - meio + a)) * kernel[a][b]
                 image_new.set_pixel(x, y, color_new)
-        image_new.acertar()
         return image_new
 
     def acertar(self):
