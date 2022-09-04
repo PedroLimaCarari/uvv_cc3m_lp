@@ -68,12 +68,12 @@ class Image:
         img_borda = Image.new(self.width, self.height)
         for x in range(self.width):
             for y in range(self.height):
-                img_borda.set_pixel(x, y, round(math.sqrt(img1.get_pixel(x, y) ** 2 + img2.get_pixel(x, y) ** 2))) # arredonda a raiz quadrada da soma do valor de entrada 
-        img_borda.acertar()        # chama a função acertar para a imagem final                                    # ao quadrado da img 1 e 2
+                img_borda.set_pixel(x, y, round(math.sqrt(img1.get_pixel(x, y) ** 2 + img2.get_pixel(x, y) ** 2))) # arredonda a raiz quadrada da soma do valor de  
+        img_borda.acertar()        # chama a função acertar para a imagem final                                    # entrada ao quadrado da img 1 e 2
         return img_borda
 
-    def correlacao(self, kernel):
-        z = len(kernel)
+    def correlacao(self, kernel):                       # a função de correlação é a função responsável por aplicar o kernel nas imagens requeridas
+        z = len(kernel)                                 # essa função verifica
         meio = z // 2
         image_new = Image.new(self.width, self.height)
         for x in range(image_new.width):
@@ -81,16 +81,16 @@ class Image:
                 color_new = 0
                 for a in range(z):
                     for b in range(z):
-                        color_new += self.get_pixel((x - meio + b), (y - meio + a)) * kernel[a][b]
+                        color_new += self.get_pixel((x - meio + b), (y - meio + a)) * kernel[a][b] 
                 image_new.set_pixel(x, y, color_new)
         return image_new
 
-    def acertar(self):
+    def acertar(self):             # corrige problemas nos valores do pixel 
         for x in range(self.width):
             for y in range(self.height):
                 pixel = self.get_pixel(x, y)
-                if pixel < 0:
-                    pixel = 0
+                if pixel < 0:      # deixa os pixeis em um intervalo de o a 255 e o arredonda para o valor inteiro mais próximo
+                    pixel = 0   
                 elif pixel > 255:
                     pixel = 255
                 pixel = int(round(pixel))
