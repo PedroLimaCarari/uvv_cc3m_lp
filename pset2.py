@@ -255,13 +255,22 @@ if __name__ == '__main__':
     #jubileu = i.blurred(5)
     #jubileu.save('test_results/cat.png')
 
-    #Questão 5
-    #i = Image.load('test_images/python.png')
-    #nitidez = i.sharpened(11)
-    #i.show()
-    #nitidez.show()
-    #roberto = i.sharpened(11)
-    #roberto.save('test_results/python.png')
+    # Questão 5
+    # kernel1 = [[0, 0, 0],
+    #            [0, 2, 0],
+    #            [0, 0, 0]]
+    # kernel2 = [[1/9, 1/9, 1/9],
+    #            [1/9, 1/9, 1/9],
+    #            [1/9, 1/9, 1/9]]
+    # kernel = [[-1/9, -1/9, -1/9],
+    #           [-1/9, 17/9, -1/9],
+    #           [-1/9, -1/9, -1/9]]
+    # i = Image.load('test_images/python.png')
+    # nitidez = i.correlacao(kernel)
+    # nitidez.show()
+    # i.show()
+    # roberto = i.sharpened(11)
+    # roberto.save('test_results/python.png')
 
     # Questão 6
     #i = Image.load('test_images/obra.png')
