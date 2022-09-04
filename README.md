@@ -81,7 +81,11 @@ O resultado será
 ![python](https://user-images.githubusercontent.com/95299280/188293404-fd6e1500-cc8b-46ad-a5e4-f1df0810061e.png)
 
 ## Questão 6
-#### Implemente o detector de bordas como o método bordas dentro da classe Imagem. O método deve retornar uma nova instância de Imagem resultante das operações acima. Quando terminar e seu código passar nos testes de detecção de borda, execute seu detector de borda na imagem imagens_teste/obra.png, salve o resultado como uma imagem PNG e faça o upload para seu repositório GitHub.
+#### Explique o que cada um dos kernels acima, por si só, está fazendo. Tente executar mostrar nos resultados dessas correlações intermediárias para ter uma noção do que está acontecendo aqui.Implemente o detector de bordas como o método bordas dentro da classe Imagem. O método deve retornar uma nova instância de Imagem resultante das operações acima. Quando terminar e seu código passar nos testes de detecção de borda, execute seu detector de borda na imagem imagens_teste/obra.png, salve o resultado como uma imagem PNG e faça o upload para seu repositório GitHub.
+
+![opera_28BKFGxkUA](https://user-images.githubusercontent.com/95299280/188333082-32e17e82-04b0-4ceb-943b-4acb50d0ca10.png)
+
+O que cada um dos kerneis acima fazem é, o KX detecta as bordas verticais e o KY detecta as bordas horizontais.
 
 ![pycharm64_qBN4GctPkk](https://user-images.githubusercontent.com/95299280/188293501-0179ad9b-3302-4e81-b0ea-dec08cd7aa38.png)
 
@@ -90,3 +94,5 @@ O resultado será
 O resultado será
 
 ![obra](https://user-images.githubusercontent.com/95299280/188293514-28a4938d-5797-46e0-90cd-08e18b7b5f8d.png)
+
+
