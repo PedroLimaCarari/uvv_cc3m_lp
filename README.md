@@ -74,7 +74,7 @@ O resultado será
 
 ![pycharm64_VYZo1zJ64L](https://user-images.githubusercontent.com/95299280/188293391-c58d8039-2145-4197-aa83-e5ebaddecebb.png)
 
-![pycharm64_bw9BnZx3yu](https://user-images.githubusercontent.com/95299280/188293395-8fb55747-ce90-4e81-9f6f-62a5a2fab616.png)
+![pycharm64_rKfBtEhBa6](https://user-images.githubusercontent.com/95299280/188333116-b5a14063-2e9e-45cb-9ee4-317550f0b476.png)
 
 O resultado será
 
