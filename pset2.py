@@ -10,8 +10,8 @@ from PIL import Image as PILImage
 
 ## NO ADDITIONAL IMPORTS ALLOWED!
 
-def k_desfoque(n):
-    return [[1 / (n ** 2) for x in range(n)]for x in range(n)]
+def k_desfoque(n): # gera o kernel de desfoque
+    return [[1 / (n ** 2) for x in range(n)]for x in range(n)] # 1 dividido pelo tamanho do kernel ao quadrado para cada pixel no kernel
 
 class Image:
     def __init__(self, width, height, pixels):
@@ -19,7 +19,7 @@ class Image:
         self.height = height
         self.pixels = pixels
 
-    def get_pixel(self, x, y):
+    def get_pixel(self, x, y):      # pega a cor do pixel nas cordenadas X e Y
         if x < 0:  # correção de erro
             x = 0
         elif x >= self.width - 1:  # correção de erro
@@ -30,11 +30,11 @@ class Image:
             y = self.height - 1
         return self.pixels[(x + y * self.width)]
 
-    def set_pixel(self, x, y, c):
+    def set_pixel(self, x, y, c): # muda a cor do pixel para a cor nova desejada
         self.pixels[(x + y * self.width)] = c
 
 
-    def apply_per_pixel(self, func):
+    def apply_per_pixel(self, func): # aplica a função desejada em cada pixel da imagem
         result = Image.new(self.width, self.height)
         for x in range(result.width):
             for y in range(result.height):
@@ -44,32 +44,32 @@ class Image:
 
         return result
 
-    def inverted(self):
+    def inverted(self): # inverte as cores da imagem escolhida utilizando a função abaixo, que consiste em pegar 255 e diminuir do valor do pixel
         return self.apply_per_pixel(lambda c: 255 - c)
 
-    def blurred(self, n):
-        kernel = k_desfoque(n)
-        desfoque = self.correlacao(kernel)
+    def blurred(self, n): # é uma função utilizada para borrar a imagem
+        kernel = k_desfoque(n) # chama a função que gera o kernel para desfoque
+        desfoque = self.correlacao(kernel) 
         desfoque.acertar()
         return desfoque
 
-    def sharpened(self, n):
+    def sharpened(self, n): # é uma função para deixar uma imagem nítida 
         img_borrada = self.blurred(n)
         img_nitidez = Image.new(self.width, self.height)
         for i in range(self.width):
             for j in range(self.height):
-                img_nitidez.set_pixel(i, j, round(2 * self.get_pixel(i, j) - img_borrada.get_pixel(i, j)))
-        img_nitidez.acertar()
-        return img_nitidez
+                img_nitidez.set_pixel(i, j, round(2 * self.get_pixel(i, j) - img_borrada.get_pixel(i, j))) # aplica a função imag_nitidez para cada pixel 
+        img_nitidez.acertar()                                                                              # onde ele pega o dobro do valor do pixel da imagem padrão
+        return img_nitidez                                                                                 # e diminui da imagem borrada
 
-    def edges(self, k1, k2):
-        img1 = self.correlacao(k1)
+    def edges(self, k1, k2):    # é uma função para detectar as boras da imagem
+        img1 = self.correlacao(k1)  # cria 2 imagens para 2 kerneis
         img2 = self.correlacao(k2)
         img_borda = Image.new(self.width, self.height)
         for x in range(self.width):
             for y in range(self.height):
-                img_borda.set_pixel(x, y, round(math.sqrt(img1.get_pixel(x, y) ** 2 + img2.get_pixel(x, y) ** 2)))
-        img_borda.acertar()
+                img_borda.set_pixel(x, y, round(math.sqrt(img1.get_pixel(x, y) ** 2 + img2.get_pixel(x, y) ** 2))) # arredonda a raiz quadrada da soma do valor de entrada 
+        img_borda.acertar()        # chama a função acertar para a imagem final                                    # ao quadrado da img 1 e 2
         return img_borda
 
     def correlacao(self, kernel):
