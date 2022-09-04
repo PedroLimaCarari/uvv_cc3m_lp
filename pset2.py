@@ -73,10 +73,10 @@ class Image:
         return img_borda
 
     def correlacao(self, kernel):                       # a função de correlação é a função responsável por aplicar o kernel nas imagens requeridas
-        z = len(kernel)                                 # essa função verifica
-        meio = z // 2
-        image_new = Image.new(self.width, self.height)
-        for x in range(image_new.width):
+        z = len(kernel)                                 # essa função verifica cada pixel da imagem e garante que a função passe por todos os valores do pixel
+        meio = z // 2                                   # ela utiliza o "meio" para encontrar o raio do kernel
+        image_new = Image.new(self.width, self.height)  # 'x - meio''y - meio', são utilizados para ver os primeiros pixeis de largura e altura do kernel
+        for x in range(image_new.width):                #'+b''+a' servem para irem passando os pixeis um a um
             for y in range(image_new.height):
                 color_new = 0
                 for a in range(z):
