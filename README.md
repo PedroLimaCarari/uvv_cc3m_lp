@@ -1,4 +1,4 @@
-#Pset 2 de linguagem de programação
+# Pset 2 de linguagem de programação
 ## Processamento de imagem do MIT 6.009
 Esse é o resultado final do exercício requisitado pelo professor Abrantes, com base no processamento de imagem, feito em linguagem python com os objetivos de implementar as funções BLURRED(borrar), INVERTED(inverter), SHARPENED(nitidez) e EDGES(bordas) e também as resoluções de algumas questões requeridas.
 ## Questão 1
