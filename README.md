@@ -3,7 +3,7 @@
 Esse é o resultado final do exercício requisitado pelo professor Abrantes, com base no processamento de imagem, feito em linguagem python com os objetivos de implementar as funções BLURRED(borrar), INVERTED(inverter), SHARPENED(nitidez) e EDGES(bordas) e também as resoluções de algumas questões requeridas.
 ## Questão 1
 #### Se você passar essa imagem pelo filtro de inversão, qual seria o output esperado?
-O output esperado será (4, 1, [226, 166, 119, 55]). Pois o filtro de inversão irá refletir os pixels sobre o valor de cinza. Dessa forma, os parâmetros que foram passados (4, 1, [29, 89, 136, 200]),serão invertidos resultando em [226, 166, 119, 55], utilizando a fórmula 255-c, sendo C os pixels da imagem original.
+A saída que se espera (4, 1, [226, 166, 119, 55]). Por que o filtro irá refletir os pixels sobre o valor de cinza. Dessa forma, os parâmetros que foram passados (4, 1, [29, 89, 136, 200]),serão invertidos resultando em [226, 166, 119, 55], utilizando a fórmula 255-c, sendo C os pixels da imagem original.
 ## Questão 2
 #### faça a depuração e, quando terminar, seu código deve conseguir passar em todos os testes do grupo de teste TestInvertido (incluindo especificamente o que você acabou de criar). Execute seu filtro de inversão na imagem imagens_teste/peixe.png, salve o resultado como uma imagem PNG e salve a imagem em seu repositório GitHub.
 ![pycharm64_J3zN28gdhk](https://user-images.githubusercontent.com/95299280/188292760-b37f10c1-d450-4ff3-bc5a-9f8d28c31b28.png)
